@@ -1,15 +1,20 @@
 
 
-function Sidebar() {
+function Sidebar(props) {
+
+    const {handleToggleModal, data} = props
     return (
         <div className = "sidebar">
-            <h2>Mesmerizing Galaxy Picture</h2>
-            <div>
-                <p>Description</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam 
-                    temporibus consequuntur quas deserunt officiis necessitatibus 
-                    excepturi expedita qui ullam alias sit suscipit exercitationem 
-                    perspiciatis, repellendus fuga, labore est. Sapiente, esse!</p>
+            <div onClick = {handleToggleModal} className = "apodOverlay"></div>
+            <div className = "sidebarContents">
+                <h2>{data?.title}</h2>
+                <div>
+                    <p>Description</p>
+                    <p>{data?.explanation}</p>
+                </div>
+                <button onClick = {handleToggleModal}>
+                    <i className="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
         </div>
     )

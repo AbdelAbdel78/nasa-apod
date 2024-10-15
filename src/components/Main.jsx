@@ -1,9 +1,12 @@
 
 
-function Main() {
+function Main(props) {
+
+    const {data} = props
+
     return (
         <div className = "apodContainer">       
-            <img src = "space.jpg" alt = "space demo pic" 
+            <img src = {data.hdurl || "space.jpg"} alt = {data.title || "space demo pic"}
             className = "apodImage"/>
         </div>
     )
